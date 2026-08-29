@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Watch — mopsy</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://m.media-amazon.com" />
+<link rel="preconnect" href="https://www.omdbapi.com" />
+<link rel="preconnect" href="https://videm.xyz" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header class="site-header is-stuck">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="mopsy home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">mopsy</span>
+    </a>
+    <div class="header-actions">
+      <a class="btn btn-quiet" href="index.html">Browse all titles</a>
+    </div>
+  </div>
+</header>
+
+<main class="watch-main">
+  <a class="back-link" href="index.html">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20v-2Z"/></svg>
+    Back to browse
+  </a>
+
+  <!-- The player iframe is mounted in here by js/watch.js -->
+  <section class="player-shell" id="playerShell" aria-label="Player">
+    <div class="player-bg" id="playerBg"></div>
+    <div class="player-placeholder" id="playerPlaceholder">
+      <div class="player-glyph">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.1v13.8c0 .8.9 1.3 1.6.9l11-6.9a1 1 0 0 0 0-1.7l-11-6.9A1 1 0 0 0 8 5.1Z"/></svg>
+      </div>
+      <h2 id="playerHeading">Nothing selected</h2>
+      <p id="playerNote">Pick a title from the browse page to start watching.</p>
+    </div>
+  </section>
+
+  <section class="watch-info">
+    <p class="now-playing" id="nowPlaying" hidden></p>
+    <h1 class="watch-title" id="watchTitle">Loading…</h1>
+    <div class="watch-meta" id="watchMeta"></div>
+    <p class="watch-overview" id="watchOverview"></p>
+  </section>
+
+  <aside class="stage-side">
+    <!-- series -->
+    <section class="stage-panel" id="episodesPanel" hidden aria-label="Episodes">
+      <div class="panel-head">
+        <h2 class="panel-title">Episodes</h2>
+        <label class="field">
+          <span>Season</span>
+          <select id="seasonSelect" aria-label="Season"></select>
+        </label>
+      </div>
+      <div class="panel-scroll">
+        <div class="episode-list" id="episodeList"></div>
+      </div>
+    </section>
+
+    <!-- movies -->
+    <section class="stage-panel" id="aboutPanel" hidden aria-label="About this title">
+      <div class="panel-head">
+        <h2 class="panel-title">About</h2>
+      </div>
+      <div class="panel-scroll">
+        <div class="about-poster" id="aboutPoster" hidden></div>
+        <dl class="about-facts" id="aboutFacts"></dl>
+      </div>
+    </section>
+  </aside>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-brand">mopsy</p>
+    <p class="footer-note">Title data from the <a href="https://www.omdbapi.com/" target="_blank">OMDb</a> API. Built with a simple intention: to make streaming accessible to everyone, freely and openly.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/watch.js"></script>
+</body>
+</html>
